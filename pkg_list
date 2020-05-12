@@ -1,0 +1,7 @@
+git
+emacs
+libopenal-dev
+libvorbis-dev
+libopusfile-dev
+libsndfile1-dev
+python3-pip
