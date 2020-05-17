@@ -1,0 +1,6 @@
+sphinx
+flake8
+pytest
+twine
+tox
+coverage
