@@ -1,6 +1,1 @@
 emacs
-libopenal1
-libvorbis-devel
-libopus-devel
-libsndfile-devel
-python3-pip
