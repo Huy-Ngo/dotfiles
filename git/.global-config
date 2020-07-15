@@ -3,8 +3,6 @@
 # Please adapt and uncomment the following lines:
 	name = Huy Ngo
 	email = duchuy29092000@gmail.com
-[core]
-	editor = emacs
 [credential]
 	helper = store --file ~/.my-credentials
 	helper = cache --timeout 30000
