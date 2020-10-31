@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/xarvos/Desktop/webDevNotes/labworks/labwork_5/task3/app/Views'
+let g:netrw_dirhist_2='/home/xarvos/github/ipa_converter/src/main/resources'
+let g:netrw_dirhist_1='/home/xarvos/github/DIP/DIP-final'
