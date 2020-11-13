@@ -55,6 +55,7 @@ unset color_promt force_color_prompt
 
 alias py='python3'
 alias pip='pip3'
+alias clipboard='xclip -sel clipboard'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/xarvos/.sdkman"
