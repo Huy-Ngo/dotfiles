@@ -25,6 +25,10 @@
 #export PILOTPORT=/dev/pilot
 #export PILOTRATE=115200
 
+export PATH=$PATH:/home/xarvos/.local/bin:/opt/Postman:/opt/lampp:/opt/android-studio/bin
+export PATH=$PATH:/usr/local/go/bin:/home/xarvos/go/bin
+export PATH=$PATH:/usr/bin/rg
+
 test -s ~/.alias && . ~/.alias || true
 
 case "$TERM" in
@@ -44,12 +48,18 @@ parse_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[1;32m\]\u@\h:\[\033[1;33m\]\w\[\033[1;31m\]$(parse_git_branch) \[\033[36m\]\n$ \[\033[00m\]'
+    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
 else
     PS1='\u@\h\w\n\$ '
 fi
 unset color_promt force_color_prompt
 
 alias py='python3'
-alias python='python3'
 alias pip='pip3'
+alias clipboard='xclip -sel clipboard'
+alias gitpushall="git remote | xargs -L1 git push --all"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/xarvos/.sdkman"
+[[ -s "/home/xarvos/.sdkman/bin/sdkman-init.sh" ]] && source "/home/xarvos/.sdkman/bin/sdkman-init.sh"
+export PATH="$PATH:/opt/mssql-tools/bin"

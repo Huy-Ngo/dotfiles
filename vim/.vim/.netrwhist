@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/xarvos/Quell/MiniGH/app/src/main'
+let g:netrw_dirhist_0='/home/xarvos/Quell/acanban/src/acanban/templates'
+let g:netrw_dirhist_9='/home/xarvos/Quell/acanban/src/acanban'
+let g:netrw_dirhist_8='/home/xarvos/github/acanban/tests'
+let g:netrw_dirhist_7='/etc/systemd/system'
+let g:netrw_dirhist_6='/home/xarvos/github/skin-crawler/frontend'
+let g:netrw_dirhist_5='/home/xarvos/github/skin-crawler/backend'
+let g:netrw_dirhist_4='/home/xarvos/github/skin-crawler'
+let g:netrw_dirhist_3='/home/xarvos/Desktop/webDevNotes/labworks/labwork_5/task3/app/Views'
+let g:netrw_dirhist_2='/home/xarvos/github/ipa_converter/src/main/resources'
