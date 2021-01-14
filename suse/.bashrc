@@ -48,7 +48,7 @@ parse_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
+    PS1='\[\033[0;32m\]\u@\h:\[\033[0;31m\]\w\[\033[0;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
 else
     PS1='\u@\h\w\n\$ '
 fi
@@ -63,3 +63,6 @@ alias gitpushall="git remote | xargs -L1 git push --all"
 export SDKMAN_DIR="/home/xarvos/.sdkman"
 [[ -s "/home/xarvos/.sdkman/bin/sdkman-init.sh" ]] && source "/home/xarvos/.sdkman/bin/sdkman-init.sh"
 export PATH="$PATH:/opt/mssql-tools/bin"
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
