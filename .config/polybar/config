@@ -10,6 +10,7 @@ modules-right = pulseaudio xkeyboard memory cpu wlan battery date
 [bar/HDMI1]
 inherit = bar/master
 monitor = HDMI-1
+modules-center = mpd
 
 [settings]
 screenchange-reload = true

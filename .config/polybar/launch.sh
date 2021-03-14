@@ -7,7 +7,7 @@ polybar eDP1 &
 
 # Dual monitor bar
 
-external_monitor=$(xrandr --query | grep 'HDMI-1')
-if [[ $external_monitor = *connected* ]]; then
+external_monitor=$(xrandr --query | grep 'HDMI-1' | grep -e "\bconnected")
+if [[ $external_monitor ]]; then
         polybar HDMI1 &
 fi
