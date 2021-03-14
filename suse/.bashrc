@@ -28,6 +28,8 @@
 export PATH=$PATH:/home/xarvos/.local/bin:/opt/Postman:/opt/lampp:/opt/android-studio/bin
 export PATH=$PATH:/usr/local/go/bin:/home/xarvos/go/bin
 export PATH=$PATH:/usr/bin/rg
+export PATH=$PATH:/home/xarvos/utils
+export PATH=$PATH:/home/xarvos/.cargo/bin
 
 test -s ~/.alias && . ~/.alias || true
 
@@ -48,7 +50,7 @@ parse_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[0;32m\]\u@\h:\[\033[0;31m\]\w\[\033[0;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
+    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
 else
     PS1='\u@\h\w\n\$ '
 fi
@@ -58,6 +60,7 @@ alias py='python3'
 alias pip='pip3'
 alias clipboard='xclip -sel clipboard'
 alias gitpushall="git remote | xargs -L1 git push --all"
+alias kanban='taskell'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/xarvos/.sdkman"
@@ -66,3 +69,4 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+source "$HOME/.cargo/env"
