@@ -49,11 +49,12 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
-else
-    PS1='\u@\h\w\n\$ '
-fi
+# if [ "$color_prompt" = yes ]; then
+#     PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
+# else
+#     PS1='\u@\h\w\n\$ '
+# fi
+PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[1;34m\]\n$ \[\033[00m\]'
 unset color_promt force_color_prompt
 
 alias py='python3'

@@ -1,0 +1,31 @@
+[core]
+	pager = delta
+
+[delta]
+	line-numbers = true
+	plus-color = "#012800"
+	minus-color = "#340001"
+	side-by-side = true
+	syntax-theme = Dracula
+
+[interactive]
+	diffFilter = delta --color-only
+
+[user]
+	name = Ngô Ngọc Đức Huy
+	email = huyngo@disroot.org
+	signingKey = 7ADED7FAF19B44BB
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+
+[sendemail]
+	smtpserver = disroot.org
+	smtpuser = huyngo@disroot.org
+	smtpencryption = tls
+	smtpserverport = 587

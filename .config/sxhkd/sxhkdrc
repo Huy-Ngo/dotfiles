@@ -3,12 +3,20 @@
 #
 
 # terminal emulator
-super + t
+super + alt + t
 	terminator
+
+# Alternative terminal
+super + t
+	alacritty
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -show run
+
+# Show current windows
+alt + Tab
+	rofi -show window
 
 # Start Firefox
 super + f
@@ -19,12 +27,26 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # switch keyboard layout
-ctrl + {1,2}
-	setxkbmap -layout us {_,-variant intl}
+ctrl + {1,2,3}
+	setxkbmap -layout {us, us -variant intl, vn}
 
 # Screenshot
 Print
-	scrot
+	scrot -s -e 'mv $f ~/Desktop/Screenshots'
+
+# Change volume
+XF86Audio{Raise,Lower}Volume
+	amixer set Master 5%{+,-}
+
+XF86AudioMute
+	amixer set Master toggle
+
+# Music playing
+XF86Audio{Prev,Next}
+	mpc -q {prev,next}
+
+XF86AudioPlay
+	mpc toggle
 
 #
 # bspwm hotkeys
@@ -61,6 +83,10 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
+
+# increase/decrease windows gap
+super + button{4,5}
+    bspc config window_gap $(( $(bspc config window_gap) {-,+} 2 ))
 
 #
 # focus/swap
