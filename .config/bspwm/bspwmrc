@@ -32,9 +32,6 @@ fi
 
 feh --bg-center $(find ~/wallpapers -type f | grep jpg| shuf -n 1)
 
-# Transparent
-compton
-
 # Other stuff
 
 # xsetroot -cursor_name left_ptr &
