@@ -65,6 +65,7 @@ font:
       family: Hack
   size: 9.5
 
+
 key_bindings:
   - { key: E,   mods: Control|Shift, action: SpawnNewInstance }
 

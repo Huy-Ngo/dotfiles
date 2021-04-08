@@ -27,12 +27,15 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # switch keyboard layout
-ctrl + {1,2,3}
-	setxkbmap -layout {us, us -variant intl, vn}
+ctrl + {1,2,3,4}
+	setxkbmap -layout {us, us -variant intl, vn, trans -variant ipa}
 
 # Screenshot
 Print
 	scrot -s -e 'mv $f ~/Desktop/Screenshots'
+
+ctrl + Print
+	scrot -s -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/Desktop/Screenshots'
 
 # Change volume
 XF86Audio{Raise,Lower}Volume

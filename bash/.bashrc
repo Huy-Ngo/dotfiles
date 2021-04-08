@@ -70,4 +70,5 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+export PATH="$HOME/Downloads/Telegram:$PATH"
 source "$HOME/.cargo/env"

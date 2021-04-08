@@ -30,8 +30,10 @@ if [ -x /usr/bin/polybar ]; then
 	bash $HOME/.config/polybar/launch.sh
 fi
 
-feh --bg-center $(find ~/wallpapers -type f | grep jpg| shuf -n 1)
+# Set backgrounds
+feh --bg-center $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)
 
 # Other stuff
+numlockx on
 
 # xsetroot -cursor_name left_ptr &
