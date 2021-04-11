@@ -18,8 +18,14 @@ autocmd FileType rst setlocal shiftwidth=3
 call plug#begin()
 Plug 'lervag/vimtex'
 Plug 'chrisbra/csv.vim'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 call plug#end()
 
+let g:snipMate = { 'snippet_version' : 1 }
 " For minted
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [

@@ -41,7 +41,7 @@ There are two things you can do about this warning:
   (global-display-line-numbers-mode))
 
 ;; To highlight current line
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 ;; Default full screen
 (custom-set-variables

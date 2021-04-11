@@ -3,16 +3,20 @@
 #
 
 # terminal emulator
-super + alt + t
-	terminator
-
-# Alternative terminal
 super + t
 	alacritty
+
+# Alternative terminal
+super + alt + t
+	terminator
 
 # program launcher
 super + @space
 	rofi -show run
+
+# Emoji selector
+super + m
+	rofimoji --action type
 
 # Show current windows
 alt + Tab
@@ -27,8 +31,8 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # switch keyboard layout
-ctrl + {1,2,3,4}
-	setxkbmap -layout {us, us -variant intl, vn, trans -variant ipa}
+ctrl + {1,2,3,4,5}
+	setxkbmap -layout {us, us -variant intl, vn, trans -variant ipa, el}
 
 # Screenshot
 Print

@@ -34,7 +34,7 @@ export PATH=$PATH:/home/xarvos/.cargo/bin
 test -s ~/.alias && . ~/.alias || true
 
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color|*-256color|alacritty) color_prompt=yes;;
 esac
 
 if [ -n "$force_color_prompt" ]; then
@@ -49,19 +49,41 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-# if [ "$color_prompt" = yes ]; then
-#     PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
-# else
-#     PS1='\u@\h\w\n\$ '
-# fi
-PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[1;34m\]\n$ \[\033[00m\]'
-unset color_promt force_color_prompt
+if [ "$color_prompt" = yes ]; then
+    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
+else
+    PS1='\u@\h\w\n\$ '
+fi
+#PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[1;34m\]\n$ \[\033[00m\]'
+#unset color_promt force_color_prompt
 
 alias py='python3'
 alias pip='pip3'
 alias clipboard='xclip -sel clipboard'
 alias gitpushall="git remote | xargs -L1 git push --all"
 alias kanban='taskell'
+alias emacs='emacs -nw'
+
+# Colorful man page
+
+man () {
+	LESS_TERMCAP_mb=$(tput bold; tput setaf 2) \
+	LESS_TERMCAP_md=$(tput bold; tput setaf 6) \
+	LESS_TERMCAP_me=$(tput sgr0) \
+	LESS_TERMCAP_so=$(tput bold; tput setaf 16; tput setab 14) \
+	LESS_TERMCAP_se=$(tput rmso; tput sgr0) \
+	LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 4) \
+	LESS_TERMCAP_ue=$(tput rmul; tput sgr0) \
+	LESS_TERMCAP_mr=$(tput rev) \
+	LESS_TERMCAP_mh=$(tput dim) \
+	LESS_TERMCAP_ZN=$(tput ssubm) \
+	LESS_TERMCAP_ZV=$(tput rsubm) \
+	LESS_TERMCAP_ZO=$(tput ssupm) \
+	LESS_TERMCAP_ZW=$(tput rsupm) \
+	GROFF_NO_SGR=1 \
+	/usr/bin/man $@
+}
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/xarvos/.sdkman"
