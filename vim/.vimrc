@@ -4,6 +4,7 @@ set autoindent
 set smartindent
 set number
 set relativenumber
+set paste
 set keymap=vietnamese-telex imdisable iminsert=0 imsearch=-1
 set dictionary=/usr/share/dict/american
 
@@ -23,9 +24,11 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'dpelle/vim-LanguageTool'
 call plug#end()
 
 let g:snipMate = { 'snippet_version' : 1 }
+let g:languagetool_jar = "/usr/share/languagetool/languagetool-commandline.jar"
 " For minted
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -37,3 +40,4 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ],
     \}
+let g:vimtex_view_method = 'mupdf'
