@@ -69,3 +69,7 @@ font:
 key_bindings:
   - { key: E,   mods: Control|Shift, action: SpawnNewInstance }
 
+mouse:
+  url:
+    launcher: xdg-open
+    modifiers: Control
