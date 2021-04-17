@@ -50,7 +50,7 @@ parse_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch) \[\033[34m\]\n$ \[\033[00m\]'
+    PS1='\[\033[1;32m\]\u@\h:\[\033[1;31m\]\w\[\033[1;33m\]$(parse_git_branch)\[\033[00m\] \n$ '
 else
     PS1='\u@\h\w\n\$ '
 fi
