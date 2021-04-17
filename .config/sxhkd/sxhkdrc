@@ -38,6 +38,15 @@ ctrl + {1,2,3,4,5}
 Print
 	scrot -s -e 'mv $f ~/Desktop/Screenshots'
 
+# Screenshot a window
+super + Print
+	scrot -u -e 'mv $f ~/Desktop/Screenshots'
+
+# Screenshot full screen
+super + shift + Print
+	scrot -e 'mv $f ~/Desktop/Screenshots'
+
+# Screenshot to clipboard
 ctrl + Print
 	scrot -s -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/Desktop/Screenshots'
 
