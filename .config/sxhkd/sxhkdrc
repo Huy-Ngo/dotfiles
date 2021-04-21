@@ -145,7 +145,7 @@ super + {_,shift + }{1-9,0}
 
 ## New wallpaper
 super + r
-	feh --bg-center $(find ~/wallpapers -type f | grep jpg| shuf -n 1)
+	~/utils/wallpaper.sh
 
 #
 # preselect
