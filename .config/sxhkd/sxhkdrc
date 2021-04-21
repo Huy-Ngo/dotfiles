@@ -15,7 +15,7 @@ super + @space
 	rofi -show run
 
 # Emoji selector
-super + m
+super + period
 	rofimoji --action type
 
 # Show current windows
