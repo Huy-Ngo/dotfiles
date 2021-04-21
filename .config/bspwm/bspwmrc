@@ -30,10 +30,10 @@ if [ -x /usr/bin/polybar ]; then
 	bash $HOME/.config/polybar/launch.sh
 fi
 
-# Set backgrounds
-feh --bg-center $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)
+~/utils/wallpaper.sh
 
 # Other stuff
 numlockx on
 
 # xsetroot -cursor_name left_ptr &
+light-locker --lock-on-suspend &
