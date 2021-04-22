@@ -2,6 +2,10 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# Kill picom
+# pkill picom 
+# picom -b
+
 # No gap
 bspc config window_gap 2
 bspc config border_width 2

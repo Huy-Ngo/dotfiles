@@ -21,16 +21,9 @@ function! XTermPasteBegin()
 endfunction
 
 " sync vim clipboard and system clipboard
-" not supported on openSUSE version tho
+" only supported on gvim tho
 set clipboard=unnamed
 
-" packadd! dracula
-" syntax enable
-" colorscheme dracula
-
-autocmd BufEnter * colorscheme koehler
-autocmd BufEnter *.md colorscheme delek
-autocmd FileType rst setlocal shiftwidth=3
 
 call plug#begin()
 Plug 'lervag/vimtex'
@@ -43,7 +36,15 @@ Plug 'honza/vim-snippets'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'Raku/vim-raku'
 Plug 'joom/latex-unicoder.vim'
+Plug 'gruvbox-community/gruvbox'
 call plug#end()
+
+set t_Co=256
+set background=dark
+colorscheme badwolf
+autocmd FileType rst setlocal shiftwidth=3
+
+hi Normal guibg=NONE ctermbg=NONE
 
 let g:snipMate = { 'snippet_version' : 1 }
 let g:languagetool_jar = "/usr/share/languagetool/languagetool-commandline.jar"
