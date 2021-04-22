@@ -56,7 +56,8 @@ esac
 #
 unset WINDOW_MANAGER STARTUP
 exec $WINDOWMANAGER ${1+"$@"}
-exec bspwm
+XDG_RUNTIME_DIR=/tmp
+exec sway
 numlockx on
 
 # call failsafe
