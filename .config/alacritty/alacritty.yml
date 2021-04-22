@@ -158,7 +158,7 @@ colors: *breeze
 font:
   normal:
       family: Hack
-  size: 9.5
+  size: 12
 
 
 key_bindings:
