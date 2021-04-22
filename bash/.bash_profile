@@ -8,5 +8,6 @@ if [[ -f ~/.profile ]]; then
 fi
 
 if [[ $- == *i* && -f ~/.bashrc ]]; then
-	~/.bashrc
+	. ~/.bashrc
+	. /usr/share/bash-completion/bash_completion
 fi
