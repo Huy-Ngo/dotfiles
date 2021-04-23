@@ -20,10 +20,12 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show=run
+set $menu wofi --show=drun
 
 # Notification daemon
 exec mako
+input * xkb_options "compose:menu"
+input * xkb_numlock enabled
 
 ### Output configuration
 #
@@ -91,15 +93,20 @@ output * bg `echo $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)` fill
 
 # Change keyboard layout
     # English
-    bindsym $ctrl+1 exec setxkbmap -layout us
+    bindsym $ctrl+1 input * xkb_layout us; input * xkb_variant ""
+    bindsym $ctrl+KP_1 input * xkb_layout us; input * xkb_variant ""
     # US-intl
-    bindsym $ctrl+2 exec setxkbmap -layout us -variant intl
+    bindsym $ctrl+2 input * xkb_layout us; input * xkb_variant intl
+    bindsym $ctrl+KP_2 input * xkb_layout us; input * xkb_variant intl
     # Vietnamese
-    bindsym $ctrl+3 exec setxkbmap -layout vn
+    bindsym $ctrl+3 input * xkb_layout vn; input * xkb_variant ""
+    bindsym $ctrl+KP_3 input * xkb_layout vn; input * xkb_variant ""
     # IPA
-    bindsym $ctrl+4 exec setxkbmap -layout trans -variant ipa
+    bindsym $ctrl+4 input * xkb_layout trans; input * xkb_variant ipa
+    bindsym $ctrl+KP_4 input * xkb_layout trans; input * xkb_variant ipa
     # Greek
-    bindsym $ctrl+5 exec setxkbmap -layout el
+    bindsym $ctrl+5 input * xkb_layout el; input * xkb_variant ""
+    bindsym $ctrl+KP_5 input * xkb_layout el; input * xkb_variant ""
 #
 # Moving around:
 #

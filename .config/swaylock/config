@@ -1,0 +1,7 @@
+ignore-empty-password
+
+indicator-caps-lock
+
+show-keyboard-layout
+
+image=$(find ~/wallpapers -type f | grep "g$" | shuf -n 1)
