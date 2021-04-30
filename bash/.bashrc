@@ -93,4 +93,7 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/.raku/bin:$PATH"
-# source "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
+export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
