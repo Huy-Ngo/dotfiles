@@ -5,7 +5,7 @@
 	line-numbers = true
 	plus-color = "#012800"
 	minus-color = "#340001"
-	side-by-side = true
+	# side-by-side = true
 	syntax-theme = Dracula
 
 [interactive]
@@ -14,7 +14,7 @@
 [user]
 	name = Ngô Ngọc Đức Huy
 	email = huyngo@disroot.org
-	signingKey = 7ADED7FAF19B44BB
+	signingKey = 904AF1C7CDF695C3
 [pull]
 	rebase = true
 [commit]
