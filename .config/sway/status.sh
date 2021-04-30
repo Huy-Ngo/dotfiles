@@ -20,8 +20,8 @@ grep 'BAT') |\
 egrep "state|percentage" |\
 awk '{print $2}')
 
-kb_layout=$(setxkbmap -query | grep layout)
-kb_variant=$(setxkbmap -query | grep variant | grep -o "[a-z]*$")
+kb_layout=$(swaymsg -t get_inputs \
+	| jq 'map(select(has("xkb_active_layout_name")))[0].xkb_active_layout_name')
 
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|

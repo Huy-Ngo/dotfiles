@@ -30,7 +30,7 @@ input * xkb_numlock enabled
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg `echo $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)` fill
+output * bg /tmp/background fill
 #
 # Example configuration:
 #
@@ -70,7 +70,8 @@ output * bg `echo $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)` fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+t exec $term
+    bindsym $mod+t splith; exec $term
+    bindsym $mod+Shift+t splitv; exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -107,6 +108,10 @@ output * bg `echo $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)` fill
     # Greek
     bindsym $ctrl+5 input * xkb_layout el; input * xkb_variant ""
     bindsym $ctrl+KP_5 input * xkb_layout el; input * xkb_variant ""
+
+# Rofimoji
+    # emoji
+    bindsym $mod+m exec rofimoji --:q
 #
 # Moving around:
 #
@@ -158,6 +163,19 @@ output * bg `echo $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)` fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+#
+# Lock screen
+#
+    bindsym $mod+End exec swaylock
+
+    exec swayidle -w \
+	    timeout 300 'swaylock -f' \
+	    timeout 600 'swaymsg "output * dpms off"' \
+	    resume 'swaymsg "output * dpms on"' \
+	    before-sleep 'swaylock -f'
+
+
 #
 # Layout stuff:
 #
@@ -187,6 +205,7 @@ output * bg `echo $(find ~/wallpapers -type f | grep "g$"| shuf -n 1)` fill
 # screenshot
     # screenshot the whole screen
     bindsym Print exec grim
+    bindsym $ctrl+Print exec grim -g "$(slurp)"
 #
 # Scratchpad:
 #
