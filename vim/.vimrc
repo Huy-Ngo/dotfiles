@@ -24,6 +24,10 @@ endfunction
 " only supported on gvim tho
 set clipboard=unnamed
 
+" writing dict files
+au BufNewFile,BufRead *.dict.txt setlocal tabstop=3 shiftwidth=3 softtabstop=3 expandtab
+au BufNewFile,BufRead *.dict.txt set tw=70
+
 
 call plug#begin()
 Plug 'lervag/vimtex'
