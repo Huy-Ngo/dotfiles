@@ -20,9 +20,11 @@ grep 'BAT') |\
 egrep "state|percentage" |\
 awk '{print $2}')
 
+wifi=$(nmcli -t -f active,ssid dev wifi | egrep '^yes' | cut -d\: -f2)
+
 kb_layout=$(swaymsg -t get_inputs \
 	| jq 'map(select(has("xkb_active_layout_name")))[0].xkb_active_layout_name')
 
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|
-echo $kb_layout $kb_variant $audio_icon $audio_volume 🔋 $battery_status ⌚$date_formatted
+echo "KB" $kb_layout $kb_variant $audio_icon $audio_volume "WLAN" $wifi BAT $battery_status TIME $date_formatted
