@@ -36,6 +36,9 @@ fi
 
 ~/utils/wallpaper.sh
 
+# Compositor
+xcompmgr &
+
 # Other stuff
 numlockx on
 
