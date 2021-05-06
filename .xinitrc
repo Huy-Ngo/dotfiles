@@ -7,8 +7,8 @@
 #
 # In case everything goes wrong, we at least fall back to a plain xterm
 #
-failsafe="xterm -ls -T Failsafe -geometry 80x24-0-0"
-trap "exec $failsafe" EXIT SIGHUP SIGINT SIGPIPE SIGTERM SIGIO
+# failsafe="xterm -ls -T Failsafe -geometry 80x24-0-0"
+# trap "exec $failsafe" EXIT SIGHUP SIGINT SIGPIPE SIGTERM SIGIO
 
 #
 # Some bash (1 and 2) settings to avoid trouble on a
@@ -54,10 +54,10 @@ esac
 # 
 # finally start the window manager
 #
-unset WINDOW_MANAGER STARTUP
-exec $WINDOWMANAGER ${1+"$@"}
+# unset WINDOW_MANAGER STARTUP
+# exec $WINDOWMANAGER ${1+"$@"}
 exec bspwm
-numlockx on
+exec numlockx on
 
 # call failsafe
 exit 0
