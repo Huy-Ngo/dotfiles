@@ -40,11 +40,11 @@ Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 set t_Co=256
-set background=dark
 colorscheme badwolf
+set background=dark
 autocmd FileType rst setlocal shiftwidth=3
 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 let g:snipMate = { 'snippet_version' : 1 }
 let g:languagetool_jar = "/usr/share/languagetool/languagetool-commandline.jar"
@@ -59,4 +59,10 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ],
     \}
+let g:vimtex_quickfix_ignore_filters = [
+  \'Underfull \\hbox (badness [0-9]*) in ',
+  \'Overfull \\hbox ([0-9]*.[0-9]*pt too wide) in ',
+  \'[Ww]arning',
+  \]
+let g:vimtex_quickfix_mode = 1
 let g:vimtex_view_method = 'mupdf'
